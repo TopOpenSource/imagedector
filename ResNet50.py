@@ -97,8 +97,7 @@ class ResNet50Demo(object):
 
     def predict(self):
         model=models.load_model("ResNet50_weight.h5")
-
-        image = cv2.imread("D:/cat2.jpg")
+        image = cv2.imread("D:/dog.jpg")
         image = cv2.resize(image, (400,500))
         image = img_to_array(image)
         image = np.expand_dims(image, axis=0)
