@@ -3,7 +3,6 @@ from keras.applications.resnet50 import ResNet50
 from keras.preprocessing.image import ImageDataGenerator
 from keras.preprocessing.image import img_to_array
 from keras.applications import imagenet_utils
-from keras.applications.imagenet_utils import decode_predictions
 
 
 import cv2
@@ -99,7 +98,7 @@ class ResNet50Demo(object):
     def predict(self):
         model=models.load_model("ResNet50_weight.h5")
 
-        image = cv2.imread("D:/cat.jpg")
+        image = cv2.imread("D:/cat2.jpg")
         image = cv2.resize(image, (400,500))
         image = img_to_array(image)
         image = np.expand_dims(image, axis=0)
